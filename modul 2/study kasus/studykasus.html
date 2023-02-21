@@ -5,43 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>studykasus</title>
-</head>
-    <style>
+</head> 
+    <style> 
+    /* digunakan untuk mengatur setiap garis tabel*/
         table{
             border-top: #000 solid;
+            /* border adalah garis tepi,top adalah atas,#000 adalah kode warna hitam,solid adalah ketebalan garis */
         }
         .leftb{
             border-left: #000 solid;
             border-bottom: #000 solid;
+            /* left berarti garis berada di kiri,
+            bottom berarti garis berada di bawah */
         }
         .left{
             border-left: #000 solid;
+            /* Border left berarti garis berada di kiri */
         }
         .bot{
             border-bottom: #000 solid;
+            /* border bottom berarti garis berada di bawah */
         }
 
         tr:hover {background-color: #92ffcc;}
+        /* tr hover digunakan untuk memberi efek warna pada tabel yang dipilih */
     </style>
 <body bgcolor="FFE15D">
+    <!-- warna background yang digunakan adalah warna kuning -->
     <br>
-    <td colspan="8" style="border-bottom:#000000 solid;"><p align="center"><font color="black" face="TIME NEW ROMAN" siz"4"><strong>TABEL PERBANDINGAN FITUR NILAI</strong></font></td>
+    <td colspan="8" style="border-bottom:#000000 solid;"><p align="center">
+        <font color="black" face="TIME NEW ROMAN" siz"4">
+        <strong>TABEL PERBANDINGAN FITUR NILAI</strong></font>
+        <!-- ini adalah judul yang digunakan -->
+    </td>
         <br>
+        <!-- digunakan untuk membuat spasi -->
         <br>
 
-    <table border="0" cellpadding="15" cellspacing="0" table style="margin-left:auto;margin-right:auto" bgcolor="FFF2F2">
+    <table border="0" cellpadding="15" cellspacing="0" 
+    table style="margin-left:auto;margin-right:auto" bgcolor="FFF2F2">
+    <!-- cellpadding merupakan jarak tulisan dari border cell --> -->
+    <!-- cellspacing merupakan jarak antara masing masing cell  -->
+    <!-- margin digunakan untuk mengatur letak tabel agar bisa di kanan,kiri,tengah -->
         <tr bgcolor="95BDFF">
+            <!-- digunakan untuk memberi warna biru pada header tabel -->
+            <!-- Tag <tr> (tabel row) untuk membuat baris. -->
             <th width="10" class="bot">No</th>
             <th width="130" class="leftb">Nama</th>
             <th width="80" class="leftb">Jurusan</th>
             <th width="75"class="leftb">Nilai</th>
             <th width="100" class="leftb">Lulus KKM</th>
+            <!-- Tag <th> (table head) untuk membuat judul pada header. -->
+            <!-- width mengatur lebar dari cell -->
+            <!-- class adalah nama kelas yang dipanggil pada style -->
         </tr>
         <td align="center" class="bot">1</td>
         <td align="center" class="leftb">Halim Prasetyo</td>
         <td align="center" class="leftb">Akutansi</td>
         <td Align="center" class="leftb">87</td>
         <td align="center" class="leftb">&#10004;</td>
+        <!-- Tag <td> (table data) untuk membuat sel. -->
+        <!-- &#10004; digunakan untuk memprint karakter khusus symbol “ ✔ ”  -->
 
         <tr>
             <td align="center" class="bot">2</td>
@@ -49,6 +73,7 @@
             <td align="center" class="leftb">Manajemen</td>
             <td Align="center" class="leftb">80</td>
             <td align="center" class="leftb">&#10004;</td>
+            <!-- &#10004; digunakan untuk memprint karakter khusus symbol “ ✔ ”  -->
         </tr>
         
         <tr>
@@ -57,6 +82,7 @@
             <td align="center" class="leftb">Fisika</td>
             <td Align="center" class="leftb">68</td>
             <td align="center" class="leftb">&#10006;</td>
+            <!--&#10006; digunakan untuk memprint karakter khusus symbol “ ✖ ”   -->
         </tr>
 
         <tr>
@@ -65,6 +91,7 @@
             <td align="center" class="leftb">Kedokteran</td>
             <td Align="center" class="leftb">50</td>
             <td align="center" class="leftb">&#10006;</td>
+            <!--&#10006; digunakan untuk memprint karakter khusus symbol “ ✖ ”   -->
         </tr>
 
         <tr>
@@ -73,6 +100,7 @@
             <td align="center" class="leftb">Matematika</td>
             <td Align="center" class="leftb">90</td>
             <td align="center" class="leftb">&#10004;</td>
+            <!-- &#10004; digunakan untuk memprint karakter khusus symbol “ ✔ ”  -->
         </tr>
 
         <tr>
@@ -81,6 +109,7 @@
             <td align="center" class="leftb">Tata busana</td>
             <td Align="center" class="leftb">98</td>
             <td align="center" class="leftb">&#10004;</td>
+            <!-- &#10004; digunakan untuk memprint karakter khusus symbol “ ✔ ”  -->
         </tr>
 
     </table>
