@@ -14,6 +14,8 @@
             <td>Nama:</td>
             <td>
                 <input type="text" required
+                style="padding: 6px;"
+                pattern="[A-z a-z]"
                 name="nama" size="30" 
                 placeholder="Isikan Nama Anda"/>
             </td>
@@ -23,9 +25,10 @@
             <td>Usia:</td>
             <td>
                 <input type="number" required
-                name="number" size="30" 
-                placeholder="masukkan Usia"/>
-                (usia minimal 17-30 tahun)
+                style="padding: 6px;width:35%;"
+                name="number"  
+                min="17" max="30"
+                placeholder="masukkan Usia"/>(usia minimal 17-30 tahun)
             </td>
         </tr>
         
@@ -33,6 +36,7 @@
             <td>Email:</td>
             <td>
                 <input type="email" required
+                style="padding: 6px;"
                 name="email" size="30" 
                 placeholder="nama_email@host.com"/>
             </td>
@@ -42,7 +46,8 @@
             <td>Web:</td>
             <td>
                 <input type="text" required
-                name="nama" size="30" maxlength="12"
+                style="padding: 6px;"
+                name="nama" size="38" maxlength="12"
                 placeholder="https://"/>
             </td>
         </tr>
@@ -51,12 +56,14 @@
             <td>Password:</td>
             <td>
                 <input type="password" required
-                name="nama" size="30" minlength="8"
+                style="padding: 6px"
+                name="nama" size="27" minlength="8"
                 placeholder="semua karakter,min 8"/>
             </td>
         </tr>
         
         <tr>
+            <td></td>
             <td>
                 <input type="submit" 
                 value="submit"  />
