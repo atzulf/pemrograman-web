@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menggunakan media Query CSS3</title>
+    <style>
+    /** Pengaturan default display none **/
+        .smartphone {
+            display: none;
+            font-family: cursive;
+            color: rgb(192, 213, 221);
+        }
+        .modelhuruf {
+            font-family: cursive;
+            color: #032c0c;
+        }
+        /** Media query untuk smartphone 375px **/
+    @media only screen and (max-width: 375px) {
+        body {
+            background-color: rgb(21, 151, 123);
+        }
+        .smartphone {
+            display: block;
+        }
+    }
+    </style>
+</head>
+<body>
+    <body>
+        <div class="modelhuruf">
+            <h3>Menggunakan Media Query CSS3</h3>
+        </div>
+
+        <div class="smartphone">
+            <h2>Terdeteksi ukuran smartphone</h2>
+        </div>
+    </body>
+</html>
