@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Latihan 2 web Dengan Bootstrap Menggunakan HTML5 Doctype-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>latihan Menggunakan bootstrap</title>
+
+    <!-- Latihan 1 Menggunakan Bootstrap CDN -->
+
+    <!-- file Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        .contener {
+            color: darkblue;
+            font-family: Helvetica;
+            font-style: italic;
+        }
+
+        .contenerflut {
+            color: crimson;
+            font-family: Helvetica;
+            font-style: italic;
+        }
+
+        .title {
+            color: darkblue;
+            font-family: monospace;
+            font-style: unset;
+            font-size: 14px;
+
+        }
+
+        .warna1 {
+            background-color: rgb(216, 239, 169);
+        }
+
+        .warna2 {
+            background-color: rgb(109, 222, 245);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <h2 align="center">
+            Latihan Menggunakan Bootstrap
+        </h2>
+    </div>
+
+    <br>
+    <br>
+    <!-- Latihan 3 Membuat Class container dan Container Fluid -->
+    <!-- Memanggil Class Container -->
+    <div class="container bg-info contener">
+        <h1> Ini adalah Container </h1>
+    </div>
+
+    <br>
+    <br>
+    <!-- Memanggil Class Container Fluid -->
+    <div class="container-fluid bg-success contenerflut">
+        <h1> Ini adalah Container Fluid</h1>
+    </div>
+    <br>
+    <div class="row">
+        <!-- Latihan 4 membuat span Grid Systems -->
+        <center>
+            <!-- Membuat span kolom 12 -->
+            <div class="col-sm-1 bg-info contener">span 1</div>
+            <div class="col-sm-1 bg-success contener">span 2</div>
+            <div class="col-sm-1 bg-info contener">span 3</div>
+            <div class="col-sm-1 bg-success contener">span 4</div>
+            <div class="col-sm-1 bg-info contener">span 5</div>
+            <div class="col-sm-1 bg-success contener">span 6</div>
+            <div class="col-sm-1 bg-info contener">span 7</div>
+            <div class="col-sm-1 bg-success contener">span 8</div>
+            <div class="col-sm-1 bg-info contener">span 9</div>
+            <div class="col-sm-1 bg-success contener">span 10</div>
+            <div class="col-sm-1 bg-info contener">span 11</div>
+            <div class="col-sm-1 bg-success contener">span 12</div>
+            <br>
+            <!-- Membuat span kolom 4 -->
+            <div class="col-sm-4 warna1 contener">span 1 </div>
+            <div class="col-sm-4 warna2 contener">span 2 </div>
+            <div class="col-sm-4 warna1 contener">span 3 </div>
+            <br>
+            <!-- membuat span kolom 4 dan 8 -->
+            <div class="col-sm-4 bg-info contener">span 1 </div>
+            <div class="col-sm-8 bg-success contener">span 2 </div>
+            <br>
+            <!-- Membuat span kolom 6 -->
+            <div class="col-sm-6 warna1 contener">span 1 </div>
+            <div class="col-sm-6 warna2" contener>span 2 </div>
+            <br>
+            <!-- Membuat span kolom 12 -->
+            <div class="col-sm-12 bg-info contener">span 12 </div>
+        </center>
+    </div>
+    <!-- Latihan 5 Menambahkan Tabel -->
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <!-- Digunakan Untuk menandai Bagian Head tabel-->
+                <tr>
+                    <th>Nama Depan</th>
+                    <th>Nama Belakang</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Digunakan untuk menandai bagian body Tabel-->
+                <tr>
+                    <td>Adit</td>
+                    <td>Spion</td>
+                    <td>Aditspion@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Zyre</td>
+                    <td>Domix</td>
+                    <td>Zyredomixz@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Ari</td>
+                    <td>Sembako</td>
+                    <td>farhankebab@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Menambah Class Button -->
+    <div class="container">
+        <div class="contener">
+            <h2>Style Button</h2>
+        </div>
+        <button type="button" class="btn">Basic</button>
+        <button type="button" class="btn btn-default">Default</button>
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-link">Link</button>
+    </div>
+</body>
+
+</html>
