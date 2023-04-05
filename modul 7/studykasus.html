@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Kasus Clone website</title>
 
     <!-- file Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
@@ -16,189 +18,162 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-    <!--Style merupakan Style CSS yang digunakan -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        /* Font Face Merupakan Font Internal pada Logo Krafton */
-        @font-face {
-            font-family: krafton font;
-            src: url(KRAFTON_FONTWindow.ttf);
-        }
+      @font-face {
+        font-family: krafton font;
+        src: url(KRAFTON_FONTWindow.ttf);
+      }
 
-        /* Merupakan Media Responsif pada Website yang digunakan di Class headLogo*/
-        @media screen and (max-width: 2000px) and (min-width: 768px) .headlogo {
-            max-width: 100%;
-            padding: 0 2.607vw;
-        }
+      @media screen and (max-width: 2000px) and (min-width: 768px) .headlogo {
+        max-width: 100%;
+        padding: 0 2.607vw;
+      }
 
-        /* Merupakan Media Responsif pada Website yang digunakan di Class headLogo*/
-        @media screen and (max-width: 767px) and (min-width: 1px) .headlogo {
-            max-width: 100%;
-            padding: 0 2.607vw;
-        }
+      @media screen and (max-width: 767px) and (min-width: 1px) .headlogo {
+        max-width: 100%;
+        padding: 0 2.607vw;
+      }
 
-        /* Headlogo merupakan penamaan Class Kepala Logo */
-        .headlogo {
-            position: relative;
-            padding-top: 10px;
-            padding-left: 50px;
-            font-size: 27px;
-            letter-spacing: 3px;
-            font-weight: lighter;
-            float: left;
-            font-family: krafton font;
-            color: #ffffff;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .headlogo {
+        position: relative;
+        padding-top: 10px;
+        padding-left: 50px;
+        font-size: 27px;
+        letter-spacing: 3px;
+        font-weight: lighter;
+        float: left;
+        font-family: krafton font;
+        color: #ffffff;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        /* Merupakan Class A saat menggunakan Link */
-        a:link {
-            color: #ffffff;
-        }
+      a:link {
+        color: #ffffff;
+      }
 
-        /* Merupakan Class A saat cursor mengvisited */
-        a:visited {
-            color: #ffffff;
-        }
+      a:visited {
+        color: #ffffff;
+      }
 
-        /* Warna Saat Kursor menunjuk ke Objek */
-        a:hover {
-            color: #ffffff;
-        }
+      a:hover {
+        color: #ffffff;
+      }
 
-        /* Merupakan Hasil Warna saat Class A Active*/
-        a:active {
-            color: #ffffff;
-        }
+      a:active {
+        color: #ffffff;
+      }
 
-        /* Merupakan Media Responsif pada Website yang digunakan di Class Menu*/
-        @media screen and (max-width: 2000px) and (min-width: 768px) .menu {
-            max-width: 100%;
-            padding: 0 2.607vw;
-        }
+      @media screen and (max-width: 2000px) and (min-width: 768px) .menu {
+        max-width: 100%;
+        padding: 0 2.607vw;
+      }
 
-        /* Merupakan Media Responsif pada Website yang digunakan di Class Menu*/
-        @media screen and (max-width: 767px) and (min-width: 1px) .menu {
-            max-width: 100%;
-            padding: 0 2.607vw;
-        }
+      @media screen and (max-width: 767px) and (min-width: 1px) .menu {
+        max-width: 100%;
+        padding: 0 2.607vw;
+      }
 
-        /* Merupakan Class Menu */
-        .menu {
-            position: relative;
-            float: left;
-            color: #ffffff;
-            padding-top: 30px;
-            z-index: 10;
-        }
+      .menu {
+        position: relative;
+        float: left;
+        color: #ffffff;
+        padding-top: 30px;
+        z-index: 10;
+      }
 
-        /* Merupakan Class nav ul */
-        nav ul {
-            float: right;
-            margin-right: 20px;
-        }
+      nav ul {
+        float: right;
+        margin-right: 20px;
+      }
 
-        /* Merupakan Class ul li yang digunakan untuk membuat Navigaton Bar */
-        ul li {
-            display: inline-block;
-            line-height: 80px;
-            font-size: 18px;
-            margin: 0 20px;
-            font-family: Trebuchet MS;
-        }
+      ul li {
+        display: inline-block;
+        line-height: 80px;
+        font-size: 18px;
+        margin: 0 20px;
+        font-family: Trebuchet MS;
+      }
 
-        /* Menunjukkan Warna Kursor saat Pointer menunjuk ke Navigation bar */
-        ul li a:hover {
-            text-decoration: underline;
-            color: black;
-        }
+      ul li a:hover {
+        text-decoration: underline;
+        color: black;
+      }
 
-        /* Merupakan Class Kotak Gambar yang digunakan */
-        .kotakgambar {
-            line-height: 0;
-            width: 500px;
-        }
+      .kotakgambar {
+        line-height: 0;
+        width: 500px;
+      }
 
-        /* Merupakan Class Section / Class Bagian */
-        section {
-            margin: 30px;
-            display: flex;
-            margin-bottom: 20px;
-            float: left;
-        }
+      section {
+        margin: 30px;
+        display: flex;
+        margin-bottom: 20px;
+        float: left;
+      }
 
-        /* Merupakan Class Image atau Class Foto */
-        img {
-            width: 850px;
-            padding-top: 50px;
-            position: absolute;
-            right: 150px;
-            filter: brightness(74%);
-        }
+      img {
+        width: 850px;
+        padding-top: 50px;
+        position: absolute;
+        right: 150px;
+        filter: brightness(74%);
+      }
 
-        /* Merupakan CLass untuk mengatur Posisi Teks */
-        .posisiteks {
-            position: absolute;
-            left: 10%;
-            top: 30%;
-            z-index: 1;
-            padding-top: 100px;
-            padding-left: 100px;
-            font-size: 100px;
-            font-family: "Bebas Neue", cursive;
-            color: #ffffff;
-        }
+      .posisiteks {
+        position: absolute;
+        left: 10%;
+        top: 30%;
+        z-index: 1;
+        padding-top: 100px;
+        padding-left: 100px;
+        font-size: 100px;
+        font-family: "Bebas Neue", cursive;
+        color: #ffffff;
+      }
 
-        /* H2 digunakan untuk Memberi nama NEW STATE MOBILE */
-        h2 {
-            font-size: 30px;
-        }
+      h2 {
+        font-size: 30px;
+      }
 
-        /* Merupakan Class yang digunakan untuk memberi warna Tulisan kecil */
-        .tulisankecil {
-            font-size: 16px;
-            font-family: Trebuchet MS;
-            z-index: 10;
-        }
+      .tulisankecil {
+        font-size: 16px;
+        font-family: Trebuchet MS;
+        z-index: 10;
+      }
     </style>
-    /* Class Style telah Selesai */
-</head>
-/* Class Head Telah Selesai */
+  </head>
 
-<body style="background-color: black">  
-    /* Digunakan Untuk memberi warna Background Hitam */
+  <body style="background-color: black">
+    <div class="menu">
+      <div class="navbar-header container-fluid headlogo">
+        <a href="https://krafton.com/ja/games/pubg-new-state/">KRAFTON</a>
+      </div>
 
-    <div class="menu">  
-        /* Merupakan Pemanggilan Class Menu pada CSS */
-
-        <div class="navbar-header container-fluid headlogo">  
-            /* Pemanggilan CLass Navbar-header,Container Fluid Boostraps dan Headlogo */
-
-            <a href="https://krafton.com/ja/games/pubg-new-state/">KRAFTON</a>  /* Link yang akan mengarahkan ke Web Krafton */
-        </div>
-        
-        <ul class="nav navbar-nav navbar-light">
-            /* Pemanggilan Navigation Bar  */
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Studios</a></li>
-            <li><a href="#">More Experiences</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">IR</a></li>
-            <li><a href="#">CSR</a></li>
-            <li><a href="#">News</a></li>
-        </ul>
+      <ul class="nav navbar-nav navbar-light">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Studios</a></li>
+        <li><a href="#">More Experiences</a></li>
+        <li><a href="#">Career</a></li>
+        <li><a href="#">IR</a></li>
+        <li><a href="#">CSR</a></li>
+        <li><a href="#">News</a></li>
+      </ul>
     </div>
-    
+
     <div class="kotakgambar">
-    /* Merupakan Pemanggilan Class Kotakgambar */
-        <div class="posisiteks">
-            /* Merupakan pemanggilan Class Posisi Teks */
-            <h2 style="font-size: 100px">NEW STATE MOBILE</h2>
-            <p class="tulisankecil">Battle Royale | Mobile</p>
-        </div>
-        <img src="https://www.krafton.com/wp-content/uploads/2021/06/battle-bg2-mins.png" />
+      <div class="posisiteks">
+        <h2 style="font-size: 100px">NEW STATE MOBILE</h2>
+        <p class="tulisankecil">Battle Royale | Mobile</p>
+      </div>
+      <img
+        src="https://www.krafton.com/wp-content/uploads/2021/06/battle-bg2-mins.png"
+      />
     </div>
-</body>
+  </body>
 </html>
