@@ -9,7 +9,7 @@
             // Casting nilai vaiabel $str ke integer
             $bil = (int) $str; // $bil = 123
                 echo gettype($str);
-                echo "<br>";
+                echo "<br>"; //untuk menambah spasi
             // Output: string
                 echo gettype($bil);
             // Output: integer
