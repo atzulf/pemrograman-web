@@ -27,26 +27,29 @@ crossorigin="anonymous">
 		}
 	</script>
 </head>
-<body>
+<body style="background-color: #0A4D68;">
 	<div class="container text-center col-12 col-md8 col-lg-3">
 		<div class="card" style="margin-top: 15%; margin-bottom: 60px;">
 			<h3 style="margin-top: 18px; margin-bottom: 15px;">SIGN IN</h3>
 		<form name="loginForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="return validateForm();">
 		<label for="id">ID/Username:</label>
-		<input class="form-control" type="text" id="id" name="id"><br><br>
+		<input class="form-control" type="text" id="id" name="id" placeholder="masukkan id/username"><br><br>
 		<label for="password">Password:</label>
-		<input class="form-control" type="password" id="password" name="password"><br><br>
-		<input type="submit" value="Login" style="margin-top: 20px; margin-bottom: 30px;">
+		<input class="form-control" type="password" id="password" name="password" placeholder="masukkan password"><br><br>
+		<input type="submit" submit="submit" value="Login" style="margin-top: 20px; margin-bottom: 30px;">
 	</form>
 		</div>
 	</div>
 	
 	<?php
-	if (isset($_POST["nama"]) || isset($_POST['password'])) {
-		if (!is_string($id) || !is_string($password)) {
-			echo "Data yang dimasukkan harus berupa string.";
-		} else if ($id == "admin" && $password == "123456") {
-			echo "<p>Selamat datang, $id!</p>";
+	if (isset($_POST["id"]) || isset($_POST['password'])) {
+		$id= $_POST['id'];
+		$password =  $_POST['password'];
+		
+		$id = isset($_POST["id"]) ? $_POST["id"] : "";
+		$password = isset($_POST["password"]) ? $_POST["password"] : "";
+		if ($id == "admin" && $password == "ataka") {
+			echo "<center><p>Selamat datang, $id!</p><center>";
 		} else {
 			echo "<center><p>Login gagal. Silahkan coba lagi.</p><center>";
 		}
