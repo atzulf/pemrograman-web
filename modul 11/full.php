@@ -5,9 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latihan</title>
+
+    <style>
+     *{
+        margin: 0;
+        padding: 5px;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        color: black;
+    }
+
+    
+    </style>
+    
 </head>
 
-<body>
+<body bgcolor="B6EAFA">
     <h3>Data Mahasiswa</h3>
     <h5>Menambahkan data mahasiswa</h5>
     <form action="tambah_aksi_full.php" method="post">
@@ -31,8 +44,11 @@
         </table>
     </form>
 
+    <br>
+    <br>
+
     <h5>Menampilkan Data Mahasiswa</h5>
-    <table border="1">
+    <table border="1" cellpadding="15" cellspacing="0"  table style="margin-left:auto bgcolor="FFF2F2">>
         <tr>
             <th>No</th>
             <th>NIM</th>
