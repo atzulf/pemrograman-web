@@ -14,6 +14,7 @@
         color: #27E1C1;
     }
     </style>
+    
 </head>
 <body bgcolor="0B2447">
     <img src="https://i.pinimg.com/564x/41/a2/a5/41a2a560f6af4ea3e04b487ad9710e2c.jpg"width=410px
