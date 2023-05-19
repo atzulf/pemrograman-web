@@ -12,7 +12,7 @@
             // Digunakan untuk membuat session
             if (mysqli_num_rows($result) == 1) {
                 $_SESSION['login'] = $user;
-                header("location: studikasus_v2.php");
+                header("location: dasboard.php");
             } else {
                 $message = "<span style='color:red; font-size:12px; text-align:center'>Username atau Password Salah! Silakan Coba Lagi</span>";
             }
@@ -124,6 +124,7 @@ input[type="submit"]{
     left: 30%;
     right: 30%;
 }
+
 
 </style>
 
