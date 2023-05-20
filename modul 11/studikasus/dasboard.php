@@ -21,7 +21,7 @@
 
     if (isset($_POST['log-out'])) {
         session_destroy();
-        header("location: login.php");
+        header("location: studikasus.php");
     }
 ?>
 
@@ -62,6 +62,30 @@
         border-radius: 20px;
         }
     </style>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#data').DataTable();
+        });
+        function confirmLogout() {
+            return confirm("Apakah anda yakin mau logout?");
+        }
+
+        function confirmInsert() {
+            return confirm("Apakah anda yakin ingin menambahkan data?");
+        }
+
+        function confirmUpdate() {
+            return confirm("Apakah anda yakin ingin mengubah data?");
+        }
+
+        function confirmDelete() {
+            return confirm("Apakah anda yakin ingin menghapus data?");
+        }
+    </script>
 </head>
 <body>
     <!-- <div class="container"> -->
@@ -72,6 +96,15 @@
                 </div>
             </div>
             <br>
+            <div class="d-flex justify-content-end align-items-center p-2 bd-highlight">
+                        <form action="" method="post" onsubmit="return confirmLogout()">
+                            <button class="btn btn-danger" type="submit" name="log-out">
+                                Logout
+                            </button>
+                        </form>
+            </div>
+            <br>
+                
                 <div class="box">
                 <table class="table " id="data">
                         <thead>
@@ -98,9 +131,9 @@
                     <td><?php echo $d['Nama']; ?></td>
                     <td><?php echo $d['Alamat']; ?></td>
                     <td>
-                        <a class="btn btn-info" href="lihat.php?nim=<?php echo $d['NIM']; ?>">Lihat</a>
-                        <a class="btn btn-info" href="edit.php?nim=<?php echo $d['NIM']; ?>">Edit</a>
-                        <a class="btn btn-info" href="hapus.php?nim=<?php echo $d['NIM']; ?>">Hapus</a>
+                        <a class="btn btn-info" href="lihat.php?id=<?php echo $d['id']; ?>">Lihat</a>
+                        <a class="btn btn-info" href="edit.php?id=<?php echo $d['id']; ?>">Edit</a>
+                        <a class="btn btn-info" onclick="return confirmDelete()" href="hapus.php?id=<?php echo $d['id']; ?>">Hapus</a>
                     </td>
                 </tr>
                 
@@ -110,7 +143,7 @@
             </table>
             <div class="d-flex justify-content-center align-items-center p-2 bd-highlight">
                 <form action="tambahdata.php" method="post">
-                    <button class="ms-3 btn btn-info " type="submit" name="tambah">
+                    <button class="ms-3 btn btn-success " type="submit" name="tambah">
                         Tambah Data
                     </button>
                 </form>

@@ -1,31 +1,9 @@
 <?php
-    if (isset($_POST['update'])) {
-        $id = $_POST['id'];
-        $query = mysqli_query($koneksi, "SELECT * FROM data_mahasiswa WHERE id = '$id'");
-        $data = mysqli_fetch_array($query);
-        $route = "update";
-    }
-    
-    if (isset($_POST['update_data'])) {
-        $id = $_POST['id'];
-        $nama = $_POST['Nama'];
-        $nim = $_POST['NIM'];
-        $alamat = $_POST['Alamat'];
-    
-        $query = mysqli_query($koneksi, "UPDATE data_mahasiswa SET Nama = '$nama', NIM = '$nim', Alamat = '$alamat' WHERE id = '$id'");
-    
-        if ($query) {
-            $message = (object) [
-                'type' => 'success',
-                'text' => 'Berhasil mengubah data'
-            ];
-            header("refresh:2; url=dasboard.php");
-        } else {
-            echo "Gagal update data";
-        }
-    }
+    include "koneksi.php";
+    $id = $_GET['id'];
+    $query = mysqli_query($koneksi, "SELECT * FROM data_mahasiswa WHERE id = '$id'");
+    $data = mysqli_fetch_array($query);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,47 +40,74 @@
         border-radius: 20px;
     }
     </style>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#data').DataTable();
+        });
+
+        function confirmUpdate() {
+            return confirm("Apakah anda akan mengubah data?");
+        }
+
+    </script>
 </head>
 <body>
     <div class="box">
+
         <div class="box">
             <div class="teks">
                 <h2>
-                    Update Data Mahasiswa 
+                    Update Data Mahasiswa milik <?= $data['Nama'] ?>
                 </h2>
             </div>
         </div>
+
+        <div class="box">
+        <a href="dasboard.php" class= "btn btn-primary">Lihat Semua Data</a>
         <br>
+        <br>
+
         <div class="kotax">
-                <form action="" method="post" onsubmit="return confirmUpdate()">
-                    <input type="hidden" name="id" value="<?= $data['id'] ?> ">
+            <?php
+            $data = mysqli_query($koneksi, "SELECT * from data_mahasiswa WHERE id='$id'") or die();
+            $no = 1;
+            while($d = mysqli_fetch_array($data)) {
+                ?>
+            <form action="update.php" method="post" onsubmit="return confirmUpdate()">
+                <input type="hidden" name="id" value="<?php echo $d['id'] ?> ">
                     <div class="form-group">
                         <label for="nim">NIM</label>
-                        <input type="text" class="form-control" name="NIM" id="NIM" value="<?= $data['NIM'] ?>"required>
+                        <input type="text" class="form-control" name="NIM" id="NIM" value="<?php echo $d['NIM'] ?>" required>
                     </div>
-                    <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="text" class="form-control" name="Nama" id="Nama" value="<?= $data['Nama'] ?>"required>
-                    </div>
-                    <div class="form-group">
-                        <label for="alamat">Alamat</label>
-                        <textarea name="Alamat" class="form-control" id="Alamat" cols="30" rows="10" required><?= $data['Alamat'] ?></textarea>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="flex">
-                        <button class="btn btn-primary" type="submit" name="update_data">
-                            Perbarui
-                        </button>
-                        <a href="dasboard.php" class="btn btn-danger">
-                            Batal
-                        </a>
-                    </div>
-                </form>
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" name="Nama" id="Nama" value="<?php echo $d['Nama'] ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat</label>
+                            <textarea name="Alamat" class="form-control" id="Alamat" cols="30" rows="10" required><?php echo $d['Alamat'] ?></textarea>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="flex">
+                            <button class="btn btn-primary" type="submit" name="update_data">
+                                Perbarui
+                            </button>
+                            <a href="dasboard.php" class="btn btn-danger">
+                                Batal
+                            </a>
+                        </div>
+                    </form>
+            <?php
+            }
+            ?>
         </div>
-        <br>
-        <br>
     </div>
-    
+        <br>
+        <br>
 </body>
 </html>

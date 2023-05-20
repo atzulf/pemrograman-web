@@ -63,6 +63,17 @@
             color: #0B2447;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#data').DataTable();
+        });
+        function confirmInsert() {
+            return confirm("Apakah anda akan menambahkan data?");
+        }
+    </script>
 </head>
 <body>
         <div class="box">
@@ -75,7 +86,7 @@
             </div>
             <br>
             <div class="kotax">
-            <form action="" method="post">
+            <form action="" method="post" onsubmit="return confirmInsert()">
                     <div class="form-group">
                         <label for="nim">NIM</label>
                         <input type="text" class="form-control" name="NIM" id="NIM" required>
@@ -89,7 +100,7 @@
                         <textarea name="Alamat" class="form-control" id="Alamat" cols="20" rows="10" required></textarea>
                     </div>
                     <div class="flex">
-                        <button class="btn btn-primary" type="submit" name="tambah_data">
+                        <button class="btn btn-info" type="submit" name="tambah_data">
                             Tambah
                         </button>
                         <a href="dasboard.php" class="btn btn-danger">
