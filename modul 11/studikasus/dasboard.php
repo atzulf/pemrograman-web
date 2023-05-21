@@ -71,19 +71,19 @@
             $('#data').DataTable();
         });
         function confirmLogout() {
-            return confirm("Apakah anda yakin mau logout?");
+            return confirm("Apakah anda ingin logout?");
         }
 
         function confirmInsert() {
-            return confirm("Apakah anda yakin ingin menambahkan data?");
+            return confirm("Apakah anda ingin menambahkan data?");
         }
 
         function confirmUpdate() {
-            return confirm("Apakah anda yakin ingin mengubah data?");
+            return confirm("Apakah anda ingin mengubah data?");
         }
 
         function confirmDelete() {
-            return confirm("Apakah anda yakin ingin menghapus data?");
+            return confirm("Apakah anda ingin menghapus data?");
         }
     </script>
 </head>
