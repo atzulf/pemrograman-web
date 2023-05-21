@@ -41,7 +41,7 @@
                     <td>Nama</td>
                     <td>
                         <input type="hidden" name="NIM" value="<?php echo $d['NIM'] ?>">
-                        <input type="text" name="NIM" value="<?php echo $d['NIM'] ?>">
+                        <input type="text" name="Nama" value="<?php echo $d['Nama'] ?>">
                     </td>
                 </tr>
                 <tr>
