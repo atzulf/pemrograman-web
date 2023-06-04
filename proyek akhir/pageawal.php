@@ -60,6 +60,12 @@
         overflow: hidden;
     }
 
+    footer{
+        width: 100%;
+        display: flex;
+        background-color:#03001C;
+    }
+
     nav ul li{
         float:left;
     }
@@ -89,9 +95,9 @@
     }
 
     .kolom .deskripsi{
-        font-size: 30px;
+        font-size: 33px;
         font-weight: bold;
-        font-family: monospace;
+        font-family:'Segoe UI';
         color: #03001C;
     }
 
@@ -133,5 +139,14 @@
             <p>Tugas Proyek Akhir Matkul Pemrograman-web Semester 2 TI UNY angkatan 22</p>
         </div>
     </div>
+
+    <footer id="footer" class="footer">
+        <div class="footer">
+            <div class="container">
+                <p></p>
+                <br>   
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

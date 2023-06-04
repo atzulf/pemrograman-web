@@ -106,22 +106,24 @@
 <body>
 <div class="kotax">
                 <div class="teks">
+                    <div class="d-flex justify-content-center">
                     <h2 class="title">DASHBOARD DATA</h2>
+                    </div>    
                 </div>
             </div>
     <br>
     <br>
     <div class="container box">
                 <div class="tekskiri">
-                        <h3 class="title">Data Mahasiswa</h3>
-                </div>
-            <div class="d-flex justify-content-end align-items-center p-2 bd-highlight">
+                <div class="d-flex justify-content-end align-items-center">
                         <form action="" method="post" onsubmit="return confirmLogout()">
                             <button class="btn btn-danger" type="submit" name="log-out">
                                 Logout
                             </button>
                         </form>
-            </div>
+                </div>
+                        <h3 class="title">Data Mahasiswa</h3>
+                </div>
             <br>
                 
                 <div class="box">

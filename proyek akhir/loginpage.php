@@ -14,8 +14,9 @@
                 $_SESSION['login'] = $user;
                 header("location: dashboard.php");
             } else {
-                $message = "<span style='color:red; font-size:12px; text-align:center'>Username atau Password Salah! Silakan Coba Lagi</span>";
+                $message = "<span>Username atau Password Salah! Silakan Coba Lagi</span>";
             }
+            
         }
     ?>
 
@@ -50,14 +51,22 @@
                     }
                 </script>
         <style>
-                    *{
+
+        *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins';
         }
+
         body{
             background-color: #05115e;
+        }
+
+        span{
+            color:red; 
+            font-size:12px; 
+            
         }
         .login-box{
             width: 320px;
@@ -144,6 +153,14 @@
                 <input type="password" name="password" id="password"placeholder="password"/>
                 <label for="password">Password</label>
             </div>
+            <br>
+            <br>
+            <br>
+            <?php if (isset($message)) : ?>
+                <div class="message">
+                    <?= $message ?>
+                        </div>
+            <?php endif; ?>
         <input class="submit-button" type="submit" value="Login" name="login">
     </form>
     </div>

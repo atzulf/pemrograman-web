@@ -9,17 +9,14 @@
             $email = $_POST['email'];
             $pass = $_POST['password']; //mengambil password
             $query = mysqli_query($koneksi, "INSERT INTO users (username, email, password) VALUES ('$user', '$email', '$pass')");
-            // $query = "SELECT * FROM users WHERE username = '$user' AND password = '$pass'";
-            
             if ($query) {
-                $message = (object) [
-                    'type' => 'success',
-                    'text' => 'Berhasil menambah data'
-                ];
+                $_SESSION['popupText'] = "Akun berhasil dibuat. Silakan login untuk melanjutkan.";
                 header("location: loginpage.php");
+                exit();
             } else {
                 echo "Gagal tambah data";
             }
+            
     }
     ?>
 
