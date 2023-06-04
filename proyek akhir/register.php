@@ -1,19 +1,35 @@
-    <!-- Studi kasus modul 12 -->
+    <!-- Studi kasus modul 11 -->
     <!-- PHP -->
     <?php
         //menggunakan session
         session_start();
+        include("koneksi.php");
         if(isset($_POST['login'])) {
             $user = $_POST['id']; //mengambil id
+            $email = $_POST['email'];
             $pass = $_POST['password']; //mengambil password
+            $query = mysqli_query($koneksi, "INSERT INTO users (id, email, password) VALUES ('$user', '$email', '$pass')");
+            // $query = "SELECT * FROM users WHERE username = '$user' AND password = '$pass'";
+            $result = mysqli_query($koneksi, $query);
             // Digunakan untuk membuat session
-            if ($user == "zoulf" && $pass == "ataka") {
-                $_SESSION['login'] = $user;
-                header("location: studikasus2.php");
-            } else {
-                echo "login gagal";
-            }
+            if (mysqli_num_rows($result) == 1) {
+                    $_SESSION['login'] = $user;
+                    header("location: dashboard.php");
+        //     } else {
+        //         $message = "<span style='color:red; font-size:12px; text-align:center'>Username atau Password Salah! Silakan Coba Lagi</span>";
+        //     }
         }
+
+        if ($query) {
+            $message = (object) [
+                'type' => 'success',
+                'text' => 'Berhasil menambah data'
+            ];
+            header("location: dashboard.php");
+        } else {
+            echo "Gagal tambah data";
+        }
+    }
     ?>
 
 <!DOCTYPE html>
@@ -22,7 +38,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studi kasus 12</title>
+    <title>Login Page</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
                 <title>Login</title>
                 <!-- Merupakan Script Javascript -->
                 <script type="text/javascript">
@@ -55,7 +74,7 @@
         }
         .login-box{
             width: 320px;
-            height: 420px;
+            height: 480px;
             background: #020827;
             color: #fff;
             top: 50%;
@@ -66,9 +85,9 @@
             padding: 70px 30px;
         }
         .login-box h2{
-            margin: 0;
+            margin-top: -20px;
             padding: 0 0 20px;
-            font-size: 22px;
+            font-size: 23px;
             text-align: center;
         }
         .user-box{
@@ -119,30 +138,36 @@
             position: absolute;
             right: 40px;
             left: 40px;
-            bottom: 18%;
+            bottom: 10%;
         }
 
         </style>
-    </head>
+</head>
 <body style=background:url("https://images.alphacoders.com/108/1081303.png"); >
     <div class="login-box">
-        <h2>Login Mahasiswa</h2>
-
+        <h2>Buat akun <br> Baru</h2>
         <form name="loginForm" action="<?php $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
-            <!-- Class usernmame -->
+            <!-- Class username -->
             <div class="user-box">
-                <input type="text" name="id" id="id">
-                <label for="id">Username</label>
+                <input type="text" name="username" id="username">
+                <label for="id">username</label>
+            </div>
+            <!-- Class email -->
+            <div class="user-box">
+                <input type="text" name="email" id="email">
+                <label for="email">Email</label>
             </div>
             <!-- Class password -->
             <div class="user-box">
                 <input type="password" name="password" id="password">
                 <label for="password">Password</label>
             </div>
-        <input class="submit-button" type="submit" value="Login" name="login">
+        <input class="submit-button" type="submit" value="Daftar" name="Daftar">
     </form>
     </div>
-
+    <div class="mt-auto p-2 justify-content-evenly">
+        <a href="pageawal.php" class="btn btn-danger">Klik untuk kembali</a>
+    </div>
 
 </body>
 </html>
