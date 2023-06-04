@@ -4,31 +4,22 @@
         //menggunakan session
         session_start();
         include("koneksi.php");
-        if(isset($_POST['login'])) {
-            $user = $_POST['id']; //mengambil id
+        if(isset($_POST['daftar'])) {
+            $user = $_POST['username']; //mengambil id
             $email = $_POST['email'];
             $pass = $_POST['password']; //mengambil password
-            $query = mysqli_query($koneksi, "INSERT INTO users (id, email, password) VALUES ('$user', '$email', '$pass')");
+            $query = mysqli_query($koneksi, "INSERT INTO users (username, email, password) VALUES ('$user', '$email', '$pass')");
             // $query = "SELECT * FROM users WHERE username = '$user' AND password = '$pass'";
-            $result = mysqli_query($koneksi, $query);
-            // Digunakan untuk membuat session
-            if (mysqli_num_rows($result) == 1) {
-                    $_SESSION['login'] = $user;
-                    header("location: dashboard.php");
-        //     } else {
-        //         $message = "<span style='color:red; font-size:12px; text-align:center'>Username atau Password Salah! Silakan Coba Lagi</span>";
-        //     }
-        }
-
-        if ($query) {
-            $message = (object) [
-                'type' => 'success',
-                'text' => 'Berhasil menambah data'
-            ];
-            header("location: dashboard.php");
-        } else {
-            echo "Gagal tambah data";
-        }
+            
+            if ($query) {
+                $message = (object) [
+                    'type' => 'success',
+                    'text' => 'Berhasil menambah data'
+                ];
+                header("location: loginpage.php");
+            } else {
+                echo "Gagal tambah data";
+            }
     }
     ?>
 
@@ -149,20 +140,20 @@
         <form name="loginForm" action="<?php $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
             <!-- Class username -->
             <div class="user-box">
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" id="username"placeholder="username"/>
                 <label for="id">username</label>
             </div>
             <!-- Class email -->
             <div class="user-box">
-                <input type="text" name="email" id="email">
+                <input type="text" name="email" id="email"placeholder="email"/>
                 <label for="email">Email</label>
             </div>
             <!-- Class password -->
             <div class="user-box">
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password"placeholder="password"/>
                 <label for="password">Password</label>
             </div>
-        <input class="submit-button" type="submit" value="Daftar" name="Daftar">
+        <input class="submit-button" type="submit" value="Daftar" name="daftar">
     </form>
     </div>
     <div class="mt-auto p-2 justify-content-evenly">

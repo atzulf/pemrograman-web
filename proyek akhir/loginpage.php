@@ -136,12 +136,12 @@
         <form name="loginForm" action="<?php $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
             <!-- Class usernmame -->
             <div class="user-box">
-                <input type="text" name="id" id="id">
+                <input type="text" name="id" id="id" placeholder="username atau email"/>
                 <label for="id">Email and username</label>
             </div>
             <!-- Class password -->
             <div class="user-box">
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password"placeholder="password"/>
                 <label for="password">Password</label>
             </div>
         <input class="submit-button" type="submit" value="Login" name="login">

@@ -18,7 +18,7 @@
         padding: 0;
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
-        color: #27E1C1;
+        color: white;
     }
 
     body{
@@ -31,10 +31,15 @@
         background-color: #013049;
         box-shadow: 0px 0px 5px #ccc;
         border-radius: 20px;
+        opacity: 85%;
         }
     
     .teks{
         text-align: center;
+    }
+
+    .tekskiri{
+        text-align: left;
     }
     .kotax{
         width: 100%;
@@ -63,18 +68,17 @@
     <div class="kotax">
         <div class="teks">
             <h2 class="title">
-            Update Data Mahasiswa milik <?= $data['nama'] ?>
+            Update Data milik <?= $data['nama'] ?>
             </h2>
         </div>
     </div>
-    <div class="d-flex justify-content-end align-items-center p-2 bd-highlight">
-        <a href="dashboard.php" class= "btn btn-primary">Lihat Semua Data</a>
+    <div class="d-flex justify-content-center align-items-center p-2 bd-highlight">
+        <a href="dashboard.php" class= "btn btn-success">Lihat Semua Data</a>
     </div>
-        
-        <br>
-        <br>
-
         <div class="container box">
+                <div class="tekskiri">
+                    <h3 class="title">Edit Data</h3>
+                </div>
             <?php
             $data = mysqli_query($koneksi, "SELECT * from datamhs WHERE id='$id'") or die();
             $no = 1;

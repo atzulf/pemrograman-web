@@ -57,6 +57,7 @@
             background-color: #013049;
             box-shadow: 0px 0px 5px #ccc;
             border-radius: 20px;
+            opacity: 85%;
         }
 
         .teks{
