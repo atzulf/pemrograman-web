@@ -47,10 +47,6 @@
                                 document.forms["loginForm"]["password"].focus();
                             }
                             return false;
-                        } else if (!/^[a-zA-Z]+$/.test(id) || !/^[a-zA-Z]+$/.test(password)) {
-                            alert("ID/Username dan Password harus huruf.");
-                            return false;
-                        }
                     }
                 </script>
         <style>

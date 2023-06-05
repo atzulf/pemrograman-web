@@ -18,6 +18,7 @@
         } else {
             echo "Gagal tambah data";
         }
+        
     }
 
     if (isset($_POST['log-out'])) {

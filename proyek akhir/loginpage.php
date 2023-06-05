@@ -8,7 +8,7 @@
             header("Location: dashboard.php");
             exit;
         }
-        
+
         include("koneksi.php");
         if(isset($_POST['login'])) {
             $user = $_POST['id']; //mengambil id
@@ -50,10 +50,7 @@
                                 document.forms["loginForm"]["password"].focus();
                             }
                             return false;
-                        } else if (!/^[a-zA-Z]+$/.test(id) || !/^[a-zA-Z]+$/.test(password)) {
-                            alert("ID/Username dan Password harus huruf.");
-                            return false;
-                        }
+                        
                     }
                 </script>
         <style>
