@@ -26,13 +26,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Buat Akun Baru</title>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
                 <title>Login</title>
                 <!-- Merupakan Script Javascript -->
                 <script type="text/javascript">
+                    function confirmInsert() {
+                        return confirm("Apakah anda ingin menambah akun?");
+                    }   
                     function validateForm() {
                         var id = document.forms["loginForm"]["id"].value;
                         var password = document.forms["loginForm"]["password"].value;
@@ -131,14 +134,14 @@
 
         </style>
 </head>
-<body style=background:url("https://images.alphacoders.com/108/1081303.png"); >
+<body style="background:url('https://images.alphacoders.com/108/1081303.png');" >
     <div class="login-box">
         <h2>Buat akun <br> Baru</h2>
         <form name="loginForm" action="<?php $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
             <!-- Class username -->
             <div class="user-box">
                 <input type="text" name="username" id="username"placeholder="username"/>
-                <label for="id">username</label>
+                <label for="id">Username</label>
             </div>
             <!-- Class email -->
             <div class="user-box">
@@ -147,10 +150,10 @@
             </div>
             <!-- Class password -->
             <div class="user-box">
-                <input type="password" name="password" id="password"placeholder="password"/>
+                <input type="password" name="password" id="password"placeholder="*******"/>
                 <label for="password">Password</label>
             </div>
-        <input class="submit-button" type="submit" value="Daftar" name="daftar">
+        <input class="submit-button" type="submit" value="Daftar" name="daftar" onclick="return confirmInsert()">
     </form>
     </div>
     <div class="mt-auto p-2 justify-content-evenly">

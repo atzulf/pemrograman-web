@@ -1,5 +1,11 @@
 <?php
     include ("koneksi.php");
+    session_start();
+    if (!isset($_SESSION['login'])) {
+        header("Location: loginpage.php");
+        exit;
+    }
+
     if (isset($_POST['tambah_data'])) {
         $nama = $_POST['nama'];
         $nim = $_POST['nim'];
@@ -147,7 +153,7 @@
             $data = mysqli_query($koneksi, "SELECT * from datamhs");
             while($d = mysqli_fetch_array($data)) {
                 ?>
-                
+
                 <tr>
                     <td><?php echo $no++; ?></td>
                     <td><?php echo $d['nim']; ?></td>

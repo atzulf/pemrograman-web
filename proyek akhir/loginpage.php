@@ -1,8 +1,14 @@
-    <!-- Studi kasus modul 11 -->
+    <!-- Login Page yang digunakan -->
     <!-- PHP -->
     <?php
         //menggunakan session
         session_start();
+
+        if (isset($_SESSION['login'])) {
+            header("Location: dashboard.php");
+            exit;
+        }
+        
         include("koneksi.php");
         if(isset($_POST['login'])) {
             $user = $_POST['id']; //mengambil id
@@ -80,6 +86,7 @@
             box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
             padding: 70px 30px;
         }
+
         .login-box h2{
             margin-top: -20px;
             padding: 0 0 20px;
@@ -139,18 +146,18 @@
 
         </style>
     </head>
-<body style=background:url("https://images.alphacoders.com/108/1081303.png"); >
+<body style="background:url('https://images.alphacoders.com/108/1081303.png');" >
     <div class="login-box">
         <h2>Login <br> Mahasiswa</h2>
         <form name="loginForm" action="<?php $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
             <!-- Class usernmame -->
             <div class="user-box">
                 <input type="text" name="id" id="id" placeholder="username atau email"/>
-                <label for="id">Email and username</label>
+                <label for="id">Email and Username</label>
             </div>
             <!-- Class password -->
             <div class="user-box">
-                <input type="password" name="password" id="password"placeholder="password"/>
+                <input type="password" name="password" id="password"placeholder="*******"/>
                 <label for="password">Password</label>
             </div>
             <br>
@@ -167,6 +174,5 @@
     <div class="mt-auto p-2 justify-content-evenly">
         <a href="pageawal.php" class="btn btn-danger">Klik untuk kembali</a>
     </div>
-
 </body>
 </html>
